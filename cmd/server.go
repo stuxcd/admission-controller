@@ -24,12 +24,11 @@ var serverCmd = &cobra.Command{
 	Short: server_short,
 	Long:  server_long,
 	RunE: func(cmd *cobra.Command, args []string) error {
-		if len(args) < 1 {
-			return fmt.Errorf("port is required")
-		}
-
 		port := os.Getenv("PORT")
 		if port == "" {
+			if len(args) < 1 {
+				return fmt.Errorf("port is requireds")
+			}
 			port = args[0]
 		}
 
@@ -40,9 +39,7 @@ var serverCmd = &cobra.Command{
 		stopCh := server.SetupSignalHandler()
 		jsonLogger, _ := NewLogger("info", "json")
 
-		keypath := cmd.Flag("keypath").Value.String()
-
-		server.ListenAndServe(port, time.Minute, jsonLogger, stopCh, keypath)
+		server.ListenAndServe(port, time.Minute, jsonLogger, stopCh)
 		return nil
 	},
 }

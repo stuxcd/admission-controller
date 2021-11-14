@@ -13,7 +13,7 @@ import (
 )
 
 // ListenAndServe starts a web server and waits for SIGTERM
-func ListenAndServe(port string, timeout time.Duration, logger *zap.SugaredLogger, stopCh <-chan struct{}, keypath string) {
+func ListenAndServe(port string, timeout time.Duration, logger *zap.SugaredLogger, stopCh <-chan struct{}) {
 	mux := http.DefaultServeMux
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
