@@ -4,7 +4,7 @@ before:
     - go fmt ./...
 builds:
   - main: '.'
-    binary: custos-ac
+    binary: sac
     env:
       - CGO_ENABLED=0
     goos:
@@ -12,9 +12,9 @@ builds:
       - windows
       - darwin
     ldflags:
-      - -s -w -X github.com/stuxcd/custos-admission-controller/cmd.version={{.Version}}
-      - -X github.com/stuxcd/custos-admission-controller/cmd.commit={{.Commit}}
-      - -X github.com/stuxcd/custos-admission-controller/cmd.date={{.Date}}
+      - -s -w -X github.com/stuxcd/admission-controller/cmd.version={{.Version}}
+      - -X github.com/stuxcd/admission-controller/cmd.commit={{.Commit}}
+      - -X github.com/stuxcd/admission-controller/cmd.date={{.Date}}
 archives:
   - replacements:
       darwin: Darwin

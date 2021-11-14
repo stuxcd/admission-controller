@@ -1,1 +1,1 @@
-# custos-admission-controller
+# admission-controller

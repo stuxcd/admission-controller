@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/stuxcd/custos-admission-controller/cmd"
+	"github.com/stuxcd/admission-controller/cmd"
 )
 
 func main() {

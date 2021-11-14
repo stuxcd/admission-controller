@@ -12,7 +12,7 @@ import (
 var (
 	logger *zap.SugaredLogger
 
-	binary     = "custos-ac"
+	binary     = "sac"
 	root_short = fmt.Sprintf("%s command line", binary)
 	root_long  = "simplify RBAC on Kubernetes."
 

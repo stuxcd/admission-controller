@@ -1,4 +1,4 @@
-module github.com/stuxcd/custos-admission-controller
+module github.com/stuxcd/admission-controller
 
 go 1.17
 
